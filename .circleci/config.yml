@@ -28,5 +28,5 @@ jobs:
 workflows:
   aws-utils:
     jobs:
-      - lint
+      - lint:
           context: aws
