@@ -15,7 +15,7 @@ jobs:
             sudo ./aws/install
             # Install eksctl
             wget -q https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_Linux_amd64.tar.gz
-            sudo tar -xfz eksctl_Linux_amd64.tar.gz
+            tar -xfz eksctl_Linux_amd64.tar.gz
             sudo chmod +x eksctl
             sudo mv ./eksctl /usr/local/bin/
             # Install kubectl
