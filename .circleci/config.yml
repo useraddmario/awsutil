@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   aws-utils:
     docker:
-      - image: cimg/python:latest
+      - image: cimg/python:3.9.5
     steps:
       - checkout
       - run:
