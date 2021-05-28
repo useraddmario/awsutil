@@ -22,9 +22,8 @@ jobs:
             sudo mv ./kubectl /usr/local/bin
             # Test installs
             aws s3 ls
-            aws eks list-clusters --output text | awk '{print $2}'
             # Check for existing cluster
-            #cluster=$(aws eks list-clusters --output text)
+            cluster=$(aws eks list-clusters --output text | awk '{print $2}')
             #if [ $cluster = "" ]; then
             #  eksctl create cluster -f deploy/cluster.yaml
             #  aws eks update-kubeconfig --name $cluster
