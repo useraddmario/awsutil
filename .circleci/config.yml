@@ -14,7 +14,7 @@ jobs:
             sudo unzip awscli-exe-linux-x86_64.zip
             sudo ./aws/install
             # Install eksctl
-            wget -q https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_Linux_amd64.tar.gz
+            curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_Linux_amd64.tar.gz"
             tar -xvfz eksctl_Linux_amd64.tar.gz
             sudo chmod +x eksctl
             sudo mv ./eksctl /usr/local/bin/
