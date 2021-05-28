@@ -14,10 +14,8 @@ jobs:
             sudo unzip awscli-exe-linux-x86_64.zip
             sudo ./aws/install
             # Install eksctl
-            curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_Linux_amd64.tar.gz"
-            tar -xvfz eksctl_Linux_amd64.tar.gz
-            sudo chmod +x eksctl
-            sudo mv ./eksctl /usr/local/bin/
+            curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+            sudo mv /tmp/eksctl /usr/local/bin
             # Install kubectl
             wget https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
             sudo chmod +x ./kubectl
