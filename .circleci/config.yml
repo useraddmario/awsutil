@@ -24,7 +24,8 @@ jobs:
             aws s3 ls
             # Check for existing cluster
             cluster=$(aws eks list-clusters --output text | awk '{print $2}')
-            if [ $cluster == "" ]; then
+            echo "HHH" + $cluster + "HHH"
+            if [ "$cluster" == "" ]; then
               eksctl create cluster -f deploy/cluster.yaml
               aws eks update-kubeconfig --name $cluster
             else
