@@ -11,17 +11,17 @@ jobs:
             apt update && apt -y install curl unzip wget
             # Install awscli
             wget -q https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
-            unzip awscli-exe-linux-x86_64.zip
-            ./aws/install
+            sudo unzip awscli-exe-linux-x86_64.zip
+            sudo ./aws/install
             # Install eksctl
             wget -q https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_Linux_amd64.tar.gz
-            tar -xfz eksctl_Linux_amd64.tar.gz
-            chmod +x eksctl
-            mv ./eksctl /usr/local/bin/
+            sudo tar -xfz eksctl_Linux_amd64.tar.gz
+            sudo chmod +x eksctl
+            sudo mv ./eksctl /usr/local/bin/
             # Install kubectl
             wget https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
-            chmod +x ./kubectl
-            mv ./kubectl /usr/local/bin
+            sudo chmod +x ./kubectl
+            sudo mv ./kubectl /usr/local/bin
             # Check for existing cluster
             cluster=$(aws eks list-clusters --output text | awk '{print $2}')
 
