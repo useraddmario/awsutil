@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  aws-utils
+  aws-utils:
     docker:
       - image: cimg/python:latest
     steps:
@@ -24,3 +24,9 @@ jobs:
             mv ./kubectl /usr/local/bin
             # Check for existing cluster
             cluster=$(aws eks list-clusters --output text | awk '{print $2}')
+
+workflows:
+  aws-utils:
+    jobs:
+      - lint
+          context: aws
